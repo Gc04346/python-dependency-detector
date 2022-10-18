@@ -1,5 +1,7 @@
 import os
 
+from output_gen import generate_html_output
+
 BASE_DIR = 'input_files'
 METHOD_PREFIX = 'def '
 
@@ -37,6 +39,6 @@ for component in components:
                 for method in methods:
                     if method in line:
                         component_deps[components.index(method_components_relation.get(method))] += 1
-final = [deps for deps in components_deps.values()]
+dep_matrix = [deps for deps in components_deps.values()]
 
-print(final)
+generate_html_output(components, dep_matrix)
