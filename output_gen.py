@@ -36,7 +36,7 @@ def generate_total_graphic(xAxis, yAxis):
     plt.bar_label(bc, yAxis)
     plt.title('Nível de Acoplamento dos Componentes')
     plt.xlabel('Componente')
-    plt.ylabel('N° de Chamadas Feitas e Recebidas de Outros Componentes')
+    plt.ylabel('Chamadas totais (feitas e recebidas)')
     plt.show()
     plt.savefig('output/chamadas_totais.png')
 
@@ -47,7 +47,7 @@ def generate_different_components_called_graphic(xAxis, yAxis):
     plt.bar_label(bc, yAxis)
     plt.title('Número de interações com outros componentes')
     plt.xlabel('Componente')
-    plt.ylabel('Chamadas feitas a outros componentes')
+    plt.ylabel('Quantidade de componentes invocados')
     plt.show()
     plt.savefig('output/comp_diferentes_chamados.png')
 
@@ -58,7 +58,7 @@ def generate_different_components_received_graphic(xAxis, yAxis):
     plt.bar_label(bc, yAxis)
     plt.title('Número de componentes dependentes')
     plt.xlabel('Componente')
-    plt.ylabel('Chamadas recebidas de outros componentes')
+    plt.ylabel('Chamadas recebidas')
     plt.show()
     plt.savefig('output/comp_diferentes_atendidos.png')
 
@@ -72,7 +72,7 @@ def generate_double_graphic(xAxis, calls_made, calls_received):
     rects2 = ax.bar(x + width / 2, calls_received, width, label='Chamadas Recebidas')
     ax.set_xlabel('Componente')
     ax.set_ylabel('Chamadas')
-    ax.set_title('N° de Chamadas Feitas/Recebidas de Outros Componentes')
+    ax.set_title('Chamadas Feitas e Recebidas Por Cada Componente')
     ax.set_xticks(x, xAxis)
     ax.legend()
     ax.bar_label(rects1, padding=3)
