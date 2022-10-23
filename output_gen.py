@@ -45,7 +45,7 @@ def generate_different_components_called_graphic(xAxis, yAxis):
     import matplotlib.pyplot as plt
     bc = plt.bar(xAxis, yAxis, label=yAxis)
     plt.bar_label(bc, yAxis)
-    plt.title('Número de interações com outros componentes')
+    plt.title('Quantidade de componentes invocados')
     plt.xlabel('Componente')
     plt.ylabel('Quantidade de componentes invocados')
     plt.show()

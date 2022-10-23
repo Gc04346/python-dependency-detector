@@ -50,6 +50,7 @@ for i, row in enumerate(dep_matrix):  # Percorrendo as linhas da matriz
     for j, val in enumerate(row):  # Percorrendo cada linha
         if i == j:  # Não soma nos casos onde o componente chama a si mesmo
             calls_made[i] -= val
+            different_components_called[i] -= 1
             continue
         dependency_sums[i] += val
         dependency_sums[j] += val
